@@ -7,21 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		86BA14334E9F20A4BD464BA5 /* Pods_SwiftyJSONApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7230AD3F86992DD8B699EF /* Pods_SwiftyJSONApp.framework */; };
 		8DABDB2321ECCB180065B93C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABDB2221ECCB180065B93C /* AppDelegate.swift */; };
-		8DABDB2521ECCB180065B93C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABDB2421ECCB180065B93C /* ViewController.swift */; };
-		8DABDB2821ECCB180065B93C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DABDB2621ECCB180065B93C /* Main.storyboard */; };
 		8DABDB2A21ECCB1A0065B93C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DABDB2921ECCB1A0065B93C /* Assets.xcassets */; };
 		8DABDB2D21ECCB1A0065B93C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DABDB2B21ECCB1A0065B93C /* LaunchScreen.storyboard */; };
+		8DABDB3921ECCBC80065B93C /*  CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABDB3821ECCBC80065B93C /*  CustomTextField.swift */; };
+		8DABDB4121ECCC230065B93C /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABDB3F21ECCC230065B93C /* StudentViewController.swift */; };
+		8DABDB4321ECCC7C0065B93C /* StudentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABDB4221ECCC7C0065B93C /* StudentManager.swift */; };
+		8DABDB4521ECCC8B0065B93C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DABDB4421ECCC8B0065B93C /* Main.storyboard */; };
+		8DABDB4A21ECD1370065B93C /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABDB4921ECD1370065B93C /* Student.swift */; };
+		8DABDB5321ECFD2D0065B93C /* RequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABDB5221ECFD2D0065B93C /* RequestHandler.swift */; };
+		8DABDB5721ECFD870065B93C /* AlamofireClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABDB5621ECFD870065B93C /* AlamofireClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6718BE533559C26112E7C1EC /* Pods-SwiftyJSONApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyJSONApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyJSONApp/Pods-SwiftyJSONApp.debug.xcconfig"; sourceTree = "<group>"; };
 		8DABDB1F21ECCB180065B93C /* SwiftyJSONApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftyJSONApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DABDB2221ECCB180065B93C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8DABDB2421ECCB180065B93C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8DABDB2721ECCB180065B93C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8DABDB2921ECCB1A0065B93C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8DABDB2C21ECCB1A0065B93C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8DABDB2E21ECCB1A0065B93C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DABDB3821ECCBC80065B93C /*  CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = " CustomTextField.swift"; sourceTree = "<group>"; };
+		8DABDB3F21ECCC230065B93C /* StudentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentViewController.swift; sourceTree = "<group>"; };
+		8DABDB4221ECCC7C0065B93C /* StudentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentManager.swift; sourceTree = "<group>"; };
+		8DABDB4421ECCC8B0065B93C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		8DABDB4921ECD1370065B93C /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		8DABDB5221ECFD2D0065B93C /* RequestHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestHandler.swift; sourceTree = "<group>"; };
+		8DABDB5621ECFD870065B93C /* AlamofireClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireClient.swift; sourceTree = "<group>"; };
+		96A7CD9F95C72290F7171075 /* Pods-SwiftyJSONApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyJSONApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyJSONApp/Pods-SwiftyJSONApp.release.xcconfig"; sourceTree = "<group>"; };
+		DE7230AD3F86992DD8B699EF /* Pods_SwiftyJSONApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyJSONApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86BA14334E9F20A4BD464BA5 /* Pods_SwiftyJSONApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +55,8 @@
 			children = (
 				8DABDB2121ECCB180065B93C /* SwiftyJSONApp */,
 				8DABDB2021ECCB180065B93C /* Products */,
+				F8E30A494AA1EEEA67E333B7 /* Pods */,
+				E6C9031DB0587A53FF644F42 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +71,92 @@
 		8DABDB2121ECCB180065B93C /* SwiftyJSONApp */ = {
 			isa = PBXGroup;
 			children = (
-				8DABDB2221ECCB180065B93C /* AppDelegate.swift */,
-				8DABDB2421ECCB180065B93C /* ViewController.swift */,
-				8DABDB2621ECCB180065B93C /* Main.storyboard */,
-				8DABDB2921ECCB1A0065B93C /* Assets.xcassets */,
-				8DABDB2B21ECCB1A0065B93C /* LaunchScreen.storyboard */,
 				8DABDB2E21ECCB1A0065B93C /* Info.plist */,
+				8DABDB3B21ECCC000065B93C /* Storyboards */,
+				8DABDB3A21ECCBEC0065B93C /* Supporting Files */,
+				8DABDB4621ECD1090065B93C /* Model */,
+				8DABDB3421ECCB890065B93C /* Managers */,
+				8DABDB3D21ECCC230065B93C /* Student */,
 			);
 			path = SwiftyJSONApp;
+			sourceTree = "<group>";
+		};
+		8DABDB3421ECCB890065B93C /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				8DABDB5621ECFD870065B93C /* AlamofireClient.swift */,
+				8DABDB5221ECFD2D0065B93C /* RequestHandler.swift */,
+				8DABDB4221ECCC7C0065B93C /* StudentManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		8DABDB3621ECCBC80065B93C /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				8DABDB3721ECCBC80065B93C /* TextFields */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		8DABDB3721ECCBC80065B93C /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				8DABDB3821ECCBC80065B93C /*  CustomTextField.swift */,
+			);
+			path = TextFields;
+			sourceTree = "<group>";
+		};
+		8DABDB3A21ECCBEC0065B93C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8DABDB3621ECCBC80065B93C /* CustomViews */,
+				8DABDB2921ECCB1A0065B93C /* Assets.xcassets */,
+				8DABDB2221ECCB180065B93C /* AppDelegate.swift */,
+			);
+			path = "\U0010Supporting Files";
+			sourceTree = "<group>";
+		};
+		8DABDB3B21ECCC000065B93C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				8DABDB2B21ECCB1A0065B93C /* LaunchScreen.storyboard */,
+				8DABDB4421ECCC8B0065B93C /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		8DABDB3D21ECCC230065B93C /* Student */ = {
+			isa = PBXGroup;
+			children = (
+				8DABDB3F21ECCC230065B93C /* StudentViewController.swift */,
+			);
+			path = Student;
+			sourceTree = "<group>";
+		};
+		8DABDB4621ECD1090065B93C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8DABDB4921ECD1370065B93C /* Student.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E6C9031DB0587A53FF644F42 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE7230AD3F86992DD8B699EF /* Pods_SwiftyJSONApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F8E30A494AA1EEEA67E333B7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6718BE533559C26112E7C1EC /* Pods-SwiftyJSONApp.debug.xcconfig */,
+				96A7CD9F95C72290F7171075 /* Pods-SwiftyJSONApp.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +166,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8DABDB3121ECCB1A0065B93C /* Build configuration list for PBXNativeTarget "SwiftyJSONApp" */;
 			buildPhases = (
+				195E11BD638C7EAF062B1DB2 /* [CP] Check Pods Manifest.lock */,
 				8DABDB1B21ECCB180065B93C /* Sources */,
 				8DABDB1C21ECCB180065B93C /* Frameworks */,
 				8DABDB1D21ECCB180065B93C /* Resources */,
+				EC2B067D668F6241ED8E1804 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -122,35 +219,81 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DABDB4521ECCC8B0065B93C /* Main.storyboard in Resources */,
 				8DABDB2D21ECCB1A0065B93C /* LaunchScreen.storyboard in Resources */,
 				8DABDB2A21ECCB1A0065B93C /* Assets.xcassets in Resources */,
-				8DABDB2821ECCB180065B93C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		195E11BD638C7EAF062B1DB2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwiftyJSONApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC2B067D668F6241ED8E1804 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftyJSONApp/Pods-SwiftyJSONApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftyJSONApp/Pods-SwiftyJSONApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8DABDB1B21ECCB180065B93C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DABDB2521ECCB180065B93C /* ViewController.swift in Sources */,
+				8DABDB4121ECCC230065B93C /* StudentViewController.swift in Sources */,
+				8DABDB5721ECFD870065B93C /* AlamofireClient.swift in Sources */,
+				8DABDB4A21ECD1370065B93C /* Student.swift in Sources */,
+				8DABDB5321ECFD2D0065B93C /* RequestHandler.swift in Sources */,
+				8DABDB4321ECCC7C0065B93C /* StudentManager.swift in Sources */,
 				8DABDB2321ECCB180065B93C /* AppDelegate.swift in Sources */,
+				8DABDB3921ECCBC80065B93C /*  CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		8DABDB2621ECCB180065B93C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8DABDB2721ECCB180065B93C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8DABDB2B21ECCB1A0065B93C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -280,6 +423,7 @@
 		};
 		8DABDB3221ECCB1A0065B93C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6718BE533559C26112E7C1EC /* Pods-SwiftyJSONApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -297,6 +441,7 @@
 		};
 		8DABDB3321ECCB1A0065B93C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96A7CD9F95C72290F7171075 /* Pods-SwiftyJSONApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
