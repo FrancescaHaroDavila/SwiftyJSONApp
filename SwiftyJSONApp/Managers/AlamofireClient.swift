@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 class AlamofireClient: RequestHandler {
+  
   func makeRequest(_ request: URLRequest, completion: @escaping ((NetworkResponse<Data>) -> Void)) {
     
     Alamofire.request(request).responseData(completionHandler: { response in

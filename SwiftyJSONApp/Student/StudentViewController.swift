@@ -14,14 +14,43 @@ class StudentViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
   
   var allStudents: [Student] = []
-    var identifierStudentManager = StudentManager(requestHandler: AlamofireClient())
+  var identifierStudentManager = StudentManager(requestHandler: AlamofireClient())
   
   @IBAction func addName(_ sender: Any) {
     
+    let alert = UIAlertController(title: "New Student", message: "Add a new student", preferredStyle: .alert)
     
+    alert.addTextField(configurationHandler: { (textFieldName) in textFieldName.placeholder = "name" })
+    
+    let saveAction = UIAlertAction(title: "Save", style: .default) { [unowned self] action in
+      
+      guard let textField = alert.textFields?.first,
+        let nameToSave = textField.text else {
+          return
+      }
+      
+      self.identifierStudentManager.addStudent(name: nameToSave) { students in
+        self.allStudents = students
+        self.tableView.reloadData()
+      }
+      
+      self.identifierStudentManager.listStudentsRequest() { students in
+        
+        self.allStudents = students
+        self.tableView.reloadData()
+      }
+    }
+    let cancelAction = UIAlertAction(title: "Cancel", style: .default)
+    
+    alert.addAction(cancelAction)
+    alert.addAction(saveAction)
+    present(alert, animated: true)
   }
   
+  
   @IBAction func deleteById(_ sender: Any) {
+    
+    
     
   }
   
@@ -29,8 +58,8 @@ class StudentViewController: UIViewController {
     self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     super.viewDidLoad()
     self.identifierStudentManager.listStudentsRequest() { students in
-        self.allStudents = students
-        self.tableView.reloadData()
+      self.allStudents = students
+      self.tableView.reloadData()
     }
   }
   

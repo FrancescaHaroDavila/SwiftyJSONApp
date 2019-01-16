@@ -17,5 +17,4 @@ enum NetworkResponse<T> {
 protocol RequestHandler {
   
   func makeRequest(_ request: URLRequest, completion: @escaping ((NetworkResponse<Data>) -> Void))
-  
 }

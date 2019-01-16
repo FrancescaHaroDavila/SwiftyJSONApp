@@ -17,38 +17,53 @@ class StudentManager {
     self.handler = requestHandler
   }
   
+  var allStudents: [Student] = []
+  var request = URLRequest(url: URL(string: "http://192.168.0.47:3000/api/v1/tasks")!)
+  
   func listStudentsRequest(completionHandler: @escaping (_ students: [Student]) -> ()) {
-    
-    var allStudents: [Student] = []
-    var request = URLRequest(url: URL(string: "http://192.168.0.47:3000/api/v1/tasks")!)
+
     request.httpMethod = "GET"
-    
     request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-//    
-//    let url = "http://192.168.0.47:3000/api/v1/tasks"
-//    Alamofire.request(url , method: .get, parameters: nil, encoding: nil, headers: nil)
-    
-    
+   
     handler.makeRequest(request, completion: { result in
       switch result {
       case .success(let data):
-        
         if let json = try? JSON(data: data) {
           for (_, object) in json {
             let studentObject = Student(jsonObject: object)
-            allStudents.append(studentObject)
+            self.allStudents.append(studentObject)
           }
-          completionHandler(allStudents)
-          print(json[0]["name"])
+          completionHandler(self.allStudents)
         }
-        
       case .failure( _):
         print("ERROR")
       }
       
     })
   }
+
   
+  func addStudent(name: String, completionHandler: @escaping (_ students: [Student]) -> ()) {
+    
+    let url = "http://192.168.0.47:3000/api/v1/tasks"
+    let parameters = [ "name" : name  ]
+    
+    Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { result in
+   
+    }
+    completionHandler(self.allStudents)
+    
+  }
+  
+  func deleteStudent(id: String, completionHandler: @escaping ( _ students: [Student]) ->()) {
+    
+    let url = "http://192.168.0.47:3000/api/v1/tasks" + id
+    
+    Alamofire.request(url).responseJSON { (responseJson) in
+      
+      let json = JSON(responseJson.result.value as Any)
+      
+    }
+  }
   
 }
-
