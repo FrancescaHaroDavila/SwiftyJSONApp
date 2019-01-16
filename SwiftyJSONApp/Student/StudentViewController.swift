@@ -10,44 +10,45 @@ import UIKit
 
 
 class StudentViewController: UIViewController {
-
+  
   @IBOutlet weak var tableView: UITableView!
   
-  var people: [Student] = []
-  var identifierStudentManager = StudentManager(requestHandler: AlamofireClient())
+  var allStudents: [Student] = []
+    var identifierStudentManager = StudentManager(requestHandler: AlamofireClient())
   
   @IBAction func addName(_ sender: Any) {
-
+    
     
   }
   
   @IBAction func deleteById(_ sender: Any) {
     
-}
+  }
   
   override func viewDidLoad() {
+    self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     super.viewDidLoad()
-    tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-    identifierStudentManager.listStudentsRequest()
+    self.identifierStudentManager.listStudentsRequest() { students in
+        self.allStudents = students
+        self.tableView.reloadData()
+    }
   }
- 
+  
 }
 
 extension StudentViewController: UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return people.count
+    return allStudents.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
-    let person = people[indexPath.row]
-    let cell = tableView.dequeueReusableCell(withIdentifier: "Cell",
-                                             for: indexPath)
-    cell.textLabel?.text = person.value(forKeyPath: "name") as? String
+    let person = allStudents[indexPath.row]
+    let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+    cell.textLabel?.text = person.name
     return cell
   }
   
-
+  
 }
 

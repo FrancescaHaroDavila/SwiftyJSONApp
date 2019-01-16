@@ -8,15 +8,20 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class AlamofireClient: RequestHandler {
   func makeRequest(_ request: URLRequest, completion: @escaping ((NetworkResponse<Data>) -> Void)) {
+    
     Alamofire.request(request).responseData(completionHandler: { response in
       guard let _ = response.error else {
         //to get JSON return value
         if let data = response.data {
           //let JSON = result as! NSDictionary
+        
+          
           completion(.success(data))
+          
         }
         return
       }

@@ -17,28 +17,38 @@ class StudentManager {
     self.handler = requestHandler
   }
   
-  func listStudentsRequest() {
+  func listStudentsRequest(completionHandler: @escaping (_ students: [Student]) -> ()) {
     
-    var request = URLRequest(url: URL(string: "http://www.mocky.io/v2/5c38cad03100002b00a99230")!)
+    var allStudents: [Student] = []
+    var request = URLRequest(url: URL(string: "http://192.168.0.47:3000/api/v1/tasks")!)
     request.httpMethod = "GET"
-
+    
     request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-
+//    
+//    let url = "http://192.168.0.47:3000/api/v1/tasks"
+//    Alamofire.request(url , method: .get, parameters: nil, encoding: nil, headers: nil)
+    
+    
     handler.makeRequest(request, completion: { result in
       switch result {
-    case .success(let data):
-
-      guard let json = try? JSON(data: data) else {
-        return
+      case .success(let data):
+        
+        if let json = try? JSON(data: data) {
+          for (_, object) in json {
+            let studentObject = Student(jsonObject: object)
+            allStudents.append(studentObject)
+          }
+          completionHandler(allStudents)
+          print(json[0]["name"])
+        }
+        
+      case .failure( _):
+        print("ERROR")
       }
-      let text = json[0]["name"]
-      print(text)
-
-    case .failure( _):
-      print("ERROR")
-      }
+      
     })
   }
+  
+  
 }
-
 

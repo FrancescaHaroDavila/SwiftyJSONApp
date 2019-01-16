@@ -8,9 +8,6 @@
 
 import Foundation
 
-enum ConnectionError: Error {
-  case forbiden
-}
 
 enum NetworkResponse<T> {
   case success(T)

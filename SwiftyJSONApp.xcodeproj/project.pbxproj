@@ -16,8 +16,9 @@
 		8DABDB4321ECCC7C0065B93C /* StudentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABDB4221ECCC7C0065B93C /* StudentManager.swift */; };
 		8DABDB4521ECCC8B0065B93C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DABDB4421ECCC8B0065B93C /* Main.storyboard */; };
 		8DABDB4A21ECD1370065B93C /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABDB4921ECD1370065B93C /* Student.swift */; };
-		8DABDB5321ECFD2D0065B93C /* RequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABDB5221ECFD2D0065B93C /* RequestHandler.swift */; };
-		8DABDB5721ECFD870065B93C /* AlamofireClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABDB5621ECFD870065B93C /* AlamofireClient.swift */; };
+		8DAC7BA321EF762B0030AE9D /* RequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC7BA221EF762B0030AE9D /* RequestHandler.swift */; };
+		8DAC7BA521EF76320030AE9D /* AlamofireClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC7BA421EF76320030AE9D /* AlamofireClient.swift */; };
+		8DAC7BA721EF763C0030AE9D /* SendMessageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAC7BA621EF763C0030AE9D /* SendMessageRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +33,9 @@
 		8DABDB4221ECCC7C0065B93C /* StudentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentManager.swift; sourceTree = "<group>"; };
 		8DABDB4421ECCC8B0065B93C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8DABDB4921ECD1370065B93C /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
-		8DABDB5221ECFD2D0065B93C /* RequestHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestHandler.swift; sourceTree = "<group>"; };
-		8DABDB5621ECFD870065B93C /* AlamofireClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireClient.swift; sourceTree = "<group>"; };
+		8DAC7BA221EF762B0030AE9D /* RequestHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestHandler.swift; sourceTree = "<group>"; };
+		8DAC7BA421EF76320030AE9D /* AlamofireClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireClient.swift; sourceTree = "<group>"; };
+		8DAC7BA621EF763C0030AE9D /* SendMessageRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMessageRequest.swift; sourceTree = "<group>"; };
 		96A7CD9F95C72290F7171075 /* Pods-SwiftyJSONApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftyJSONApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftyJSONApp/Pods-SwiftyJSONApp.release.xcconfig"; sourceTree = "<group>"; };
 		DE7230AD3F86992DD8B699EF /* Pods_SwiftyJSONApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftyJSONApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -84,8 +86,10 @@
 		8DABDB3421ECCB890065B93C /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				8DABDB5621ECFD870065B93C /* AlamofireClient.swift */,
-				8DABDB5221ECFD2D0065B93C /* RequestHandler.swift */,
+				8DAC7BA821EF76A70030AE9D /* Network */,
+				8DAC7BA621EF763C0030AE9D /* SendMessageRequest.swift */,
+				8DAC7BA221EF762B0030AE9D /* RequestHandler.swift */,
+				8DAC7BA421EF76320030AE9D /* AlamofireClient.swift */,
 				8DABDB4221ECCC7C0065B93C /* StudentManager.swift */,
 			);
 			path = Managers;
@@ -140,6 +144,13 @@
 				8DABDB4921ECD1370065B93C /* Student.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8DAC7BA821EF76A70030AE9D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		E6C9031DB0587A53FF644F42 /* Frameworks */ = {
@@ -282,9 +293,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DABDB4121ECCC230065B93C /* StudentViewController.swift in Sources */,
-				8DABDB5721ECFD870065B93C /* AlamofireClient.swift in Sources */,
+				8DAC7BA521EF76320030AE9D /* AlamofireClient.swift in Sources */,
 				8DABDB4A21ECD1370065B93C /* Student.swift in Sources */,
-				8DABDB5321ECFD2D0065B93C /* RequestHandler.swift in Sources */,
+				8DAC7BA721EF763C0030AE9D /* SendMessageRequest.swift in Sources */,
+				8DAC7BA321EF762B0030AE9D /* RequestHandler.swift in Sources */,
 				8DABDB4321ECCC7C0065B93C /* StudentManager.swift in Sources */,
 				8DABDB2321ECCB180065B93C /* AppDelegate.swift in Sources */,
 				8DABDB3921ECCBC80065B93C /*  CustomTextField.swift in Sources */,
