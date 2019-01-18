@@ -17,11 +17,11 @@ class StudentManager {
     self.handler = requestHandler
   }
   
-  var allStudents: [Student] = []
+
   var request = URLRequest(url: URL(string: "http://192.168.0.47:3000/api/v1/tasks")!)
   
   func listStudentsRequest(completionHandler: @escaping (_ students: [Student]) -> ()) {
-
+    var allStudents: [Student] = []
     request.httpMethod = "GET"
     request.setValue("application/json", forHTTPHeaderField: "Content-Type")
    
@@ -30,10 +30,12 @@ class StudentManager {
       case .success(let data):
         if let json = try? JSON(data: data) {
           for (_, object) in json {
+            
             let studentObject = Student(jsonObject: object)
-            self.allStudents.append(studentObject)
+            allStudents.append(studentObject)
           }
-          completionHandler(self.allStudents)
+          completionHandler(allStudents)
+          print("arregloL:\(allStudents.count)")
         }
       case .failure( _):
         print("ERROR")
@@ -44,26 +46,31 @@ class StudentManager {
 
   
   func addStudent(name: String, completionHandler: @escaping (_ students: [Student]) -> ()) {
-    
+    let allStudents: [Student] = []
     let url = "http://192.168.0.47:3000/api/v1/tasks"
     let parameters = [ "name" : name  ]
     
     Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { result in
    
     }
-    completionHandler(self.allStudents)
+    completionHandler(allStudents)
     
   }
   
-  func deleteStudent(id: String, completionHandler: @escaping ( _ students: [Student]) ->()) {
+  func deleteStudent(id: String, completionHandler: @escaping () ->()) {
+    let url = "http://192.168.0.47:3000/api/v1/tasks/" + id
     
-    let url = "http://192.168.0.47:3000/api/v1/tasks" + id
-    
-    Alamofire.request(url).responseJSON { (responseJson) in
-      
-      let json = JSON(responseJson.result.value as Any)
+    Alamofire.request(url, method: .delete).response { response in
+      if response.error == nil {
+        completionHandler()
+      } else {
+        print(response.error)
+      }
       
     }
+
   }
   
 }
+  
+
