@@ -87,9 +87,6 @@
 			isa = PBXGroup;
 			children = (
 				8DAC7BA821EF76A70030AE9D /* Network */,
-				8DAC7BA621EF763C0030AE9D /* SendMessageRequest.swift */,
-				8DAC7BA221EF762B0030AE9D /* RequestHandler.swift */,
-				8DAC7BA421EF76320030AE9D /* AlamofireClient.swift */,
 				8DABDB4221ECCC7C0065B93C /* StudentManager.swift */,
 			);
 			path = Managers;
@@ -149,6 +146,9 @@
 		8DAC7BA821EF76A70030AE9D /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				8DAC7BA221EF762B0030AE9D /* RequestHandler.swift */,
+				8DAC7BA621EF763C0030AE9D /* SendMessageRequest.swift */,
+				8DAC7BA421EF76320030AE9D /* AlamofireClient.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";

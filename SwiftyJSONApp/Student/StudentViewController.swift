@@ -34,10 +34,7 @@ class StudentViewController: UIViewController {
         self.tableView.reloadData()
       }
       
-      self.identifierStudentManager.listStudentsRequest() { students in
-        self.studentsAll = students
-        self.tableView.reloadData()
-      }
+      self.listStudents()
 
     }
     
@@ -62,16 +59,10 @@ class StudentViewController: UIViewController {
       }
       
       self.identifierStudentManager.deleteStudent(id: itemToDelete ) { 
-        self.identifierStudentManager.listStudentsRequest() { students in
-          self.studentsAll = students
-          self.tableView.reloadData()
-        }
+        self.listStudents()
       }
       
-      self.identifierStudentManager.listStudentsRequest() { students in
-        self.studentsAll = students
-        self.tableView.reloadData()
-      }
+      self.listStudents()
     }
     
     let cancelAciton = UIAlertAction(title: "Cancel", style: .default)
@@ -86,14 +77,15 @@ class StudentViewController: UIViewController {
   override func viewDidLoad() {
     self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     super.viewDidLoad()
+    listStudents()
+  }
+  func listStudents(){
     self.identifierStudentManager.listStudentsRequest() { students in
       self.studentsAll = students
       self.tableView.reloadData()
     }
   }
-  
 }
-
 extension StudentViewController: UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -109,6 +101,65 @@ extension StudentViewController: UITableViewDataSource, UITableViewDelegate, UIT
     return cell
   }
   
+  func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?{
+    
+    let person = studentsAll[indexPath.row]
+    
+    let alert = UIAlertController(title: "Update Name",
+                                  message: "Update Name",
+                                  preferredStyle: .alert)
+    
+    alert.addTextField(configurationHandler: { (textFieldName) in
+      
+      textFieldName.placeholder = "name"
+      
+      textFieldName.text = person.name
+      
+    })
+    
+    let editAction = UITableViewRowAction(style: .default, title: "Edit") { (action, indexPath) in
+      
+      let updateAction = UIAlertAction(title: "Update", style: .default) { [unowned self] action in
+        
+        guard let textField = alert.textFields?[0],
+          let nameToSave = textField.text else {
+            return
+        }
+        
+        self.identifierStudentManager.updateStudent(id: String(person.id), name: nameToSave){ students in
+          self.studentsAll = students
+          self.listStudents()
+        }
+        self.listStudents()
+        self.tableView.reloadData()
+        
+      }
+      
+      let cancelAction = UIAlertAction(title: "Cancel", style: .default)
+      
+      alert.addAction(cancelAction)
+      alert.addAction(updateAction)
+      
+      self.present(alert, animated: true)
+      
+    }
+    
+    let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
+      // delete item at indexPath
+      self.identifierStudentManager.deleteStudent(id: String(person.id)){
+        self.listStudents()
+      }
+      self.studentsAll.remove(at: (self.studentsAll.index(of: person))!)
+      
+      self.tableView.reloadData()
+    }
+    
+    editAction.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+    deleteAction.backgroundColor = #colorLiteral(red: 0.6138959391, green: 0.09183319133, blue: 0.005303928019, alpha: 1)
+    
+    return [editAction, deleteAction]
+    
+  }
   
 }
 

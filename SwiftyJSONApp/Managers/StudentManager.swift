@@ -71,6 +71,17 @@ class StudentManager {
 
   }
   
+  func updateStudent(id : String, name: String, completionHandler: @escaping (_ students: [Student]) ->()){
+    let url = "http://192.168.0.47:3000/api/v1/tasks/" + id
+    let allStudents: [Student] = []
+    let parameters = ["name" : name]
+    
+    Alamofire.request(url, method: .put, parameters: parameters, encoding: JSONEncoding.default).responseJSON {result in
+    }
+    completionHandler( allStudents)
+  }
+  
+  
 }
   
 
